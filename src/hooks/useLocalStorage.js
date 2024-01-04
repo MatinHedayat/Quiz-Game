@@ -1,5 +1,3 @@
-import { useEffect } from 'react';
-
 export default function useLocalStorage() {
   const setLocalStorage = (key, value) => {
     localStorage.setItem(key, JSON.stringify(value));
