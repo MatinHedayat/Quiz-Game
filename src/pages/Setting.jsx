@@ -18,10 +18,10 @@ export default function Setting() {
     (state) => state.setting
   );
 
-  const dispatch = useDispatch();
-  const { fetchData, apiUrl } = useFetchData();
-
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const { fetchData, apiUrl } = useFetchData();
 
   const [isLoading, setIsLoading] = useState(false);
   const loadingCondition = isLoading ? (
@@ -49,8 +49,8 @@ export default function Setting() {
         nextText={loadingCondition}
         nextFunc={handleStartGame}
       >
-        <div className='h-2/3 overflow-auto pr-2'>
-          <p className='text-gray-800 dark:text-gray-200 capitalize text-lg font-bold flex gap-x-2 mb-5'>
+        <div className='max-h-[65%] overflow-auto pr-2'>
+          <p className='text-gray-800 dark:text-gray-200 capitalize text-lg font-bold flex gap-x-2 mb-4'>
             <PiSelectionBackgroundBold className='text-3xl' />
             you can select single or multiple Difficulties :
           </p>

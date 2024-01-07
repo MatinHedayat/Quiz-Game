@@ -4,7 +4,7 @@ export default function Hint() {
   return (
     <>
       <Page title='Hint' backPage='/' nextPage='/categories'>
-        <div className='text-gray-800 dark:text-gray-200 h-2/3 pb-8 pr-4 overflow-auto'>
+        <div className='text-gray-800 dark:text-gray-200 max-h-[65%] pb-8 pr-4 overflow-auto'>
           <h3 className='text-2xl dark:text-gray-300 font-extrabold capitalize'>
             Welcome to the game
           </h3>
@@ -24,10 +24,10 @@ export default function Hint() {
               </p>
               <p>
                 This is a question and answer game that you can use and enjoy
-                with different settings. These settings include determining the
-                <b>Category</b> of questions, <b>Difficulty Level</b> of
-                questions, <b>Number</b> of questions and more. You can have
-                different experiences of the game with different settings.
+                with different settings. These settings include determining the{' '}
+                <b>Category</b>, <b>Difficulty Level</b> and <b>Number</b> of
+                questions and more. You can have different experiences of the
+                game with different settings.
               </p>
             </div>
 
@@ -36,7 +36,7 @@ export default function Hint() {
                 On the settings page
               </p>
               <p>
-                after set the settings you can start the game by pressing the
+                after setting the settings you can start the game by pressing the{' '}
                 <b>Start Game</b> button. On the questions page, you can choose
                 the answer to each question or leave the question unanswered and
                 press the <b>Next</b> button to go to the next question. After

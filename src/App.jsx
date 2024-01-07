@@ -11,7 +11,23 @@ import {
   History,
   Info,
 } from './exporter';
+import useLocalStorage from './hooks/useLocalStorage';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+
 export default function App() {
+  const matchData = useSelector((state) => state.matchData);
+  const history = useSelector((state) => state.history);
+  const setting = useSelector((state) => state.setting);
+
+  const { setLocalStorage } = useLocalStorage();
+
+  useEffect(() => {
+    setLocalStorage('matchData', matchData);
+    setLocalStorage('history', history);
+    setLocalStorage('setting', setting);
+  }, [matchData, history, setting]);
+
   return (
     <>
       <Routes>
