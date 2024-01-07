@@ -1,13 +1,11 @@
 import { useEffect, useState } from 'react';
-import useLocalStorage from './useLocalStorage';
 
 export default function useTheme() {
-  const { setLocalStorage, getLocalStorage } = useLocalStorage();
-  const initialState = getLocalStorage('theme') || 'light';
+  const initialState = localStorage.getItem('theme') || 'light';
   const [theme, setTheme] = useState(initialState);
 
   useEffect(() => {
-    setLocalStorage('theme', theme);
+    localStorage.setItem('theme', theme);
 
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
