@@ -1,6 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
+import useLocalStorage from '../hooks/useLocalStorage';
 
-const initialState = JSON.parse(localStorage.getItem('character')) || {
+const { getLocalStorage } = useLocalStorage();
+const initialState = getLocalStorage('character') || {
   username: '',
   avatar: 'avatars/1.jpg',
   isLogin: false,
@@ -11,7 +13,10 @@ const characterSlice = createSlice({
   initialState,
   reducers: {
     loginCharacter: (state, action) => action.payload,
-    logoutCharacter: (state, action) => initialState,
+    logoutCharacter: (state, action) => {
+      initialState
+      localStorage.removeItem('character');
+    },
   },
 });
 

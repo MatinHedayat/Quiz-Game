@@ -45,6 +45,11 @@ const settingSlice = createSlice({
     changeBackBtn: (state, action) => {
       state.backBtn = action.payload;
     },
+
+    resetSetting: () => {
+      initialState
+      localStorage.removeItem('setting');
+    },
   },
 });
 
@@ -55,4 +60,5 @@ export const {
   changeNumberOfQuestions,
   changeTimer,
   changeBackBtn,
+  resetSetting,
 } = settingSlice.actions;
