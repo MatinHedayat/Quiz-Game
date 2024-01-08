@@ -10,6 +10,7 @@ import Storage from './pages/Storage';
 import History from './pages/History';
 import Info from './pages/Info';
 
+
 export {
   Launcher,
   Hint,
